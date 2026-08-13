@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #1e1e2f;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Controls row: wraps on small screens, spaced out evenly */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.controls label {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+button {
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #8477f2;
+}
+
+button:disabled {
+  background: #444;
+  cursor: not-allowed;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Complexity info box: a compact card showing Big-O values
+   for whichever algorithm is currently selected */
+.complexity-box {
+  display: inline-flex;
+  gap: 24px;
+  background: #2a2a40;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.complexity-row {
+  display: flex;
+  gap: 6px;
+}
+
+.complexity-label {
+  color: #a29bfe;
+  font-weight: 600;
+}
+
+/* The core layout: bars sit in a row, aligned to the bottom,
+   so taller values grow upward like a real bar chart */
+.bars-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 400px;
+  gap: 2px;
+  border-bottom: 2px solid #444;
+}
+
+/* Each bar: width is set dynamically by JS depending on array size */
+.bar {
+  background: #6c5ce7;
+  transition: height 0.1s ease, background 0.1s ease;
+}
+
+/* JS will add these classes temporarily during sorting */
+.bar.comparing {
+  background: #ff7675;
+}
+
+.bar.sorted {
+  background: #55efc4;
+}

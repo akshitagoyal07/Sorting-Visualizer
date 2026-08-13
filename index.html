@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sorting Algorithm Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Sorting Algorithm Visualizer</h1>
+
+  <!-- Controls: everything the user can adjust -->
+  <div class="controls">
+    <label>
+      Array Size:
+      <input type="range" id="sizeSlider" min="5" max="100" value="30" />
+    </label>
+
+    <label>
+      Speed:
+      <input type="range" id="speedSlider" min="1" max="100" value="50" />
+    </label>
+
+    <label>
+      Algorithm:
+      <select id="algoSelect">
+        <option value="bubble">Bubble Sort</option>
+        <option value="selection">Selection Sort</option>
+        <option value="insertion">Insertion Sort</option>
+        <option value="merge">Merge Sort</option>
+        <option value="quick">Quick Sort</option>
+      </select>
+    </label>
+
+    <button id="generateBtn">Generate New Array</button>
+    <button id="sortBtn">Start Sorting</button>
+  </div>
+
+  <!-- Live stats -->
+  <div class="stats">
+    <span>Comparisons: <span id="comparisonCount">0</span></span>
+    <span>Swaps: <span id="swapCount">0</span></span>
+  </div>
+
+  <!-- Complexity info: updates whenever the algorithm dropdown changes -->
+  <div class="complexity-box" id="complexityBox">
+    <div class="complexity-row">
+      <span class="complexity-label">Time (Best):</span>
+      <span id="timeBest"></span>
+    </div>
+    <div class="complexity-row">
+      <span class="complexity-label">Time (Average):</span>
+      <span id="timeAvg"></span>
+    </div>
+    <div class="complexity-row">
+      <span class="complexity-label">Time (Worst):</span>
+      <span id="timeWorst"></span>
+    </div>
+    <div class="complexity-row">
+      <span class="complexity-label">Space:</span>
+      <span id="spaceComplexity"></span>
+    </div>
+  </div>
+
+  <!-- Bars will be inserted here by JavaScript -->
+  <div class="bars-container" id="barsContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
